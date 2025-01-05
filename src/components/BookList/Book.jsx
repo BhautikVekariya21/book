@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Book.css';
+import "./BookList.css";
 
 const Book = (book) => {
   return (
@@ -14,9 +14,20 @@ const Book = (book) => {
             <span>{book.title}</span>
           </div>
         </Link>
+
         <div className='book-item-info-item author fs-15'>
           <span className='text-capitalize fw-7'>Author: </span>
-          <span>{book.author.join(", ")}</span>
+          <span>{Array.isArray(book.author) ? book.author.join(", ") : "Unknown Author"}</span>
+        </div>
+
+        <div className='book-item-info-item edition-count fs-15'>
+          <span className='text-capitalize fw-7'>Total Editions: </span>
+          <span>{book.edition_count || "N/A"}</span>
+        </div>
+
+        <div className='book-item-info-item publish-year fs-15'>
+          <span className='text-capitalize fw-7'>First Publish Year: </span>
+          <span>{book.first_publish_year || "N/A"}</span>
         </div>
       </div>
     </div>
