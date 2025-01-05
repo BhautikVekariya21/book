@@ -1,6 +1,35 @@
-.loader{
+.loader {
     padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures loader is centered vertically on the screen */
+    background-color: #f9f9f9; /* Optional: subtle background for better visibility */
 }
-.loader img{
-    width: 120px;
+
+.loader img {
+    width: 80px; /* Default size for smaller devices */
+    height: auto;
+    animation: spin 1.5s linear infinite; /* Optional: spinning animation */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .loader img {
+        width: 100px; /* Slightly larger for tablets */
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .loader img {
+        width: 120px; /* Full size for desktops */
+    }
 }

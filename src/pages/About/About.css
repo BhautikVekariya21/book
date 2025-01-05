@@ -1,28 +1,48 @@
-.about{
-    padding: 3rem 0;
-}
-.about-content{
-    gap: 4rem;
-}
-.about-title{
-    margin: 1rem 0;
-}
-.about-img img{
-    max-width: 520px;
-}
-.about-text p{
-    margin: 1.8rem 0;
-    opacity: 0.8;
+.about {
+    padding: 3rem 1rem; /* Reduced padding for smaller devices */
 }
 
-@media screen and (min-width: 800px){
-    .about-content{
+.about-content {
+    display: grid;
+    gap: 2rem; /* Adjusted for smaller screens */
+}
+
+.about-title {
+    margin: 1rem 0;
+    font-size: 1.8rem; /* Scaled font size for smaller devices */
+}
+
+.about-img img {
+    max-width: 100%; /* Ensures image scales with container */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.about-text p {
+    margin: 1rem 0;
+    opacity: 0.8;
+    font-size: 1rem; /* Font size scales for smaller screens */
+}
+
+@media screen and (min-width: 800px) {
+    .about {
+        padding: 3rem 2rem;
+    }
+
+    .about-content {
         grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
     }
-    .about-title{
+
+    .about-title {
         margin-top: 0;
+        font-size: 2.4rem; /* Larger font size for larger screens */
     }
-    .about-img img{
-        margin-left: 0;
+
+    .about-img img {
+        max-width: 520px; /* Specific size for larger screens */
+    }
+
+    .about-text p {
+        font-size: 1.2rem;
     }
 }

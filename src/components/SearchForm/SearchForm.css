@@ -1,15 +1,77 @@
-.search-form{
+.search-form {
     width: 100%;
-    max-width: 680px;
+    max-width: 680px; /* Limits form width on larger screens */
+    padding: 1rem; /* Adds padding for smaller screens */
+    margin: 0 auto; /* Centers the form */
 }
-.search-form-elem{
-    padding: 1.4rem 2.8rem;
-    border-radius: 3.8rem;
+
+.search-form-elem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.8rem; /* Reduced padding for smaller screens */
+    border-radius: 2.5rem; /* Adjusted for better proportions */
+    background-color: #fff; /* Ensures background contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
-.search-form-elem .form-control{
-    font-size: 2rem;
-    padding: 0.6rem;
+
+.search-form-elem .form-control {
+    flex: 1; /* Ensures input takes up available space */
+    font-size: 1.6rem; /* Scaled font size for smaller screens */
+    padding: 0.6rem; /* Adjusted padding for better usability */
+    border: none;
+    outline: none;
 }
-.search-form-elem .form-control::placeholder{
+
+.search-form-elem .form-control::placeholder {
     opacity: 0.9;
+    font-size: 1.4rem; /* Adjusts placeholder font size */
+}
+
+.search-form-elem button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-form-elem button .text-purple {
+    color: #8d27ae; /* Keeps consistent styling */
+}
+
+@media screen and (min-width: 600px) {
+    .search-form-elem {
+        padding: 1.4rem 2.8rem; /* Restores larger padding for medium screens */
+        border-radius: 3.8rem;
+    }
+
+    .search-form-elem .form-control {
+        font-size: 2rem;
+    }
+
+    .search-form-elem .form-control::placeholder {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .search-form {
+        max-width: 800px; /* Wider form for larger screens */
+    }
+
+    .search-form-elem {
+        padding: 1.6rem 3rem;
+    }
+
+    .search-form-elem .form-control {
+        font-size: 2.2rem;
+    }
+
+    .search-form-elem .form-control::placeholder {
+        font-size: 2rem;
+    }
 }
